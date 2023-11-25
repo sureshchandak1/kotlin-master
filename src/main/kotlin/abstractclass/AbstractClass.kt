@@ -36,3 +36,17 @@ class Circle(val radius: Double) : Shape() {
     }
 
 }
+
+/*
+*       Any
+*        ^
+*       BaseShape
+*        ^
+*       Shape
+*        ^
+*       Circle
+* */
+
+
+
+
