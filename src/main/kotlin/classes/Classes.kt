@@ -12,6 +12,16 @@ fun main(args: Array<String>) {
 
     mustang.applyBrakes()
     beetle.applyBrakes()
+
+    val p1 = Person("A", 21)
+    val p2 = Person("B", 17)
+
+    println("is p1 vote = ${ p1.canVote() }")
+    println("is p2 vote = ${ p2.canVote() }")
+
+    p2.age = 26
+    println("is p2 vote = ${ p2.canVote() }")
+
 }
 
 class Car(val name: String, val type: String, var kmRun: Double) { // name, type, kmRun is class properties
@@ -23,4 +33,9 @@ class Car(val name: String, val type: String, var kmRun: Double) { // name, type
     fun applyBrakes() {
         println("$name Applied Breaks")
     }
+}
+
+class Person(val name: String, var age: Int) {
+
+    fun canVote() = age > 18
 }
