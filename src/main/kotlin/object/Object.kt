@@ -30,6 +30,8 @@ fun main() {
     }
     person.fullName()
 
+    MyClass.MyObject.print()
+
 }
 
 object LikeObject {
@@ -48,4 +50,14 @@ interface Cloneable {
 open class Person(internal val name: String) {
     open fun fullName() = println("Full name - $name")
 }
+
+class MyClass {
+    object MyObject {
+        fun print() {
+            println("Hello, I am print from object")
+        }
+    }
+}
+
+
 
