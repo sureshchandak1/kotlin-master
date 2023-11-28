@@ -1,3 +1,5 @@
+package getterSetter
+
 fun main() {
     val person = Person("a", 21)
     println(person.age)
