@@ -1,5 +1,11 @@
 package dataClasses
 
+/*
+*  - Data classes in Kotlin are classes whose main purpose is to hold data
+*  - The primary constructor must have at least one parameter.
+*  - All primary constructor parameters must be marked as val or var
+*  - Data classes can't be abstract, open, sealed, or inner
+* */
 fun main() {
     val p1 = Person(1, "John")
     val p2 = Person(1, "John")
