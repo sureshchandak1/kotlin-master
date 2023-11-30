@@ -19,5 +19,8 @@ fun main(args: Array<String>) {
 
     println("Size - ${ arr1.size }")
 
+    val sum: Int = arr2.sum()
+    println(sum)
+
     println(arr1[3]) // ArrayIndexOutOfBoundsException (IndexOutOfBoundsException)
 }
