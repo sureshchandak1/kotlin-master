@@ -15,7 +15,7 @@ fun main(args: Array<String>) {
 
 }
 
-class Pizza private constructor(private val type: String, private val toppings: String) {
+private class Pizza private constructor(private val type: String, private val toppings: String) {
 
     companion object Factory {
         fun create(pizzaType: String) : Pizza {
