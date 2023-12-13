@@ -13,8 +13,8 @@ private fun miniMaxSum1(arr: Array<Int>): Unit {
     var min: Long = arr[0].toLong()
     var max: Long = 0
     var total: Long = 0
-    for (x in 0 until arr.size) {
-        val item = arr[x].toLong()
+    for (element in arr) {
+        val item = element.toLong()
         total += item
         if (item < min) {
             min = item
