@@ -1,5 +1,5 @@
-// All possible combination of latter
-
+// Print all permutations of a string
+// permutations = All possible combination of latter
 fun main() {
     val str = "abc"
     printPermutations(str, "")

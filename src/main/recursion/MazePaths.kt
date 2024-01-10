@@ -1,7 +1,7 @@
-//
+// Count total paths in a maze to move from (0, 0) to (n, m)
 fun main() {
     val n = 3
-    val m = 3
+    val m = 4
     val totalPaths = countPaths(0, 0, n, m)
     println("Total Paths = $totalPaths")
 }
