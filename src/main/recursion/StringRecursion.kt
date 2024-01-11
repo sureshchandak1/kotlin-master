@@ -12,6 +12,8 @@ fun main() {
 
     removeDuplicate("abbccda", ArrayList(), 0)
 
+    println(checkPalindrome("121"))
+
 }
 
 private fun reverse(str: String, index: Int): String {
@@ -44,7 +46,7 @@ private fun findCharFirstLastIndex(str: String, ch: Char, index: Int = 0) {
         return
     }
 
-    if (ch == str.toCharArray()[index]) {
+    if (ch == str[index]) {
         if (FindChar.fPosition == -1) {
             FindChar.fPosition = index
         } else {
@@ -66,7 +68,7 @@ private fun findCharFirstLastIndex(str: String, ch: Char, first: Int = -1, last:
         return
     }
 
-    if (ch == str.toCharArray()[index]) {
+    if (ch == str[index]) {
         if (fPosition == -1) {
             fPosition = index
         } else {
@@ -118,6 +120,22 @@ private fun removeDuplicate(str: String, chList: MutableList<Char>, index: Int) 
     }
 
     removeDuplicate(str, chList, index + 1)
+}
+
+private fun checkPalindrome(value: String) : Boolean {
+
+    val valueLength = value.length
+
+    for (index in 0 ..< valueLength / 2) {
+        if (value[index] != value[valueLength - index - 1]) {
+            return false
+        }
+    }
+
+    // val reverseValue = reverse(value, value.length - 1)
+    // return value == reverseValue
+
+    return true
 }
 
 private class FindChar {
