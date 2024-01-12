@@ -1,5 +1,7 @@
 package easy
 
+// Longest Common Prefix
+
 fun main() {
     var strs: Array<String> = arrayOf("flower","flow","flight")
     println(strs.commonPrefix())
