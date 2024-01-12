@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/problem/solving" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/design" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/recursion" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/leetcode" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/design/patterns" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/kotlin" isTestSource="true" />
