@@ -11,6 +11,7 @@ fun main(args: Array<String>) {
 }
 
 // Each enum constant is an object
+// Modifier 'open' is not applicable to 'enum class'
 enum class Day(val number: Int) {
     SUNDAY(1),
     MONDAY(2),
@@ -24,5 +25,11 @@ enum class Day(val number: Int) {
         println("Day is $this")
     }
 }
+
+/*
+* Not allow to extend enum class to another enum class
+enum class Monday : Day {
+
+}*/
 
 

@@ -25,3 +25,10 @@ fun main() {
 }
 
 data class Person(val id: Int, val name: String) {  }
+
+/*
+* Not allow to extend data class to another data class
+* (Not allow to create sub class)
+data class Men(
+    val age: Int
+) : Person()*/
