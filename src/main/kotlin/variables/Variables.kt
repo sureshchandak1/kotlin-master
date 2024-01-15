@@ -18,5 +18,23 @@ fun main(args: Array<String>) {
     val isKotlinFun: Boolean = true // 1 bit    true or false
     val myGrade: Char = 'B' // 16 bits
 
+    charPosition('a', 'A', '6')
+}
+
+private fun charPosition(vararg chs: Char) {
+
+    chs.forEach { ch ->
+        when (ch) {
+            in 'a'..'z' -> {
+                println("This is small case")
+            }
+            in 'A'..'Z' -> {
+                println("This is upper case")
+            }
+            in '0'..'9' -> {
+                println("This is numeric")
+            }
+        }
+    }
 
 }

@@ -7,5 +7,21 @@ fun main() {
         println(number * index)
         ++index
     }
-    println("Index = " + index)
+    println("Index = $index")
+
+    sumOfEven(5)
+}
+
+private fun sumOfEven(n: Int) {
+
+    var sum = 0
+    var index = 2
+
+    while (index <= n) {
+        sum += index
+
+        index += 2
+    }
+
+    println("Even number sum = $sum")
 }
