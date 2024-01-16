@@ -3,6 +3,8 @@ fun main() {
 
     print("0 1 ")
     printFibonacci(0, 1, 5)
+    println()
+    printFibonacci(5)
 }
 
 private fun fibonacci1(n: Int) : Int {
@@ -26,4 +28,19 @@ private fun printFibonacci(first: Int, second: Int, n: Int) {
     print("$next ")
 
     printFibonacci(second, next, n - 1)
+}
+
+private fun printFibonacci(n: Int) {
+
+    var a = 0
+    var b = 1
+
+    print("$a $b ")
+
+    for (index in 1 .. n) {
+        val next = a + b
+        a = b
+        b = next
+        print("$next ")
+    }
 }
