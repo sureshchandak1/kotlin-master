@@ -22,5 +22,9 @@ fun main(args: Array<String>) {
     val sum: Int = arr2.sum()
     println(sum)
 
+    val arr = IntArray(5) { -1 }  // construct with size and fill array with 0
+    println("${arr[0]}  ${arr[1]}  ${arr[2]}  ${arr[3]}  ${arr[4]}")
+
     println(arr1[3]) // ArrayIndexOutOfBoundsException (IndexOutOfBoundsException)
+
 }
