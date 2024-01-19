@@ -9,6 +9,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/design" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/recursion" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/leetcode" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/codingninjas" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/dsa" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/design/patterns" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
