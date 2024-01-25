@@ -1,10 +1,27 @@
 package medium
 
 fun main() {
-    findDuplicates(intArrayOf(4,3,2,7,8,2,3,1))
+    val arr = intArrayOf(4,3,2,7,8,2,3,1)
+    println(findDuplicates(arr))
 }
 
 private fun findDuplicates(arr: IntArray): List<Int> {
+
+    val countMap: MutableMap<Int, Int> = HashMap()
+    val list: MutableList<Int> = mutableListOf()
+
+    for (number in arr) {
+        if (countMap.contains(number)) {
+            list.add(number)
+        } else {
+            countMap[number] = 1
+        }
+    }
+
+    return list
+}
+
+private fun findDuplicates1(arr: IntArray): List<Int> {
 
     var ans = 0
 
