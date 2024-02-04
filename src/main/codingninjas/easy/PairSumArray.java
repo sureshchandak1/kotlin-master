@@ -12,6 +12,7 @@ public class PairSumArray {
         List<int[]> ans = pairSum(arr, 0);
 
         for (int[] value : ans) {
+            int[] v = ans.get(1);
             System.out.println(Arrays.toString(value));
         }
     }
