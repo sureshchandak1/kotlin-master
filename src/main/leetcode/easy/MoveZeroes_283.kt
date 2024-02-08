@@ -35,3 +35,16 @@ fun printArray(arr: IntArray) {
     print("]")
     println()
 }
+
+fun printArray(arr: MutableList<Int>) {
+    print("[")
+    val size = arr.size
+    for ((index, item) in arr.withIndex()) {
+        print("$item")
+        if (index < size - 1) {
+            print(", ")
+        }
+    }
+    print("]")
+    println()
+}
