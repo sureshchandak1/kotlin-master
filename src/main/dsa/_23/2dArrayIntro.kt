@@ -8,7 +8,7 @@ fun main() {
         intArrayOf(7, 9, 8)
     )
 
-    printArray2D(first, 3, 3)
+    printArray2D(first)
 
     // A 3x4 array of Int, all set to 0.
     val arr = Array(3) { Array(4) { 0 } }
@@ -50,7 +50,11 @@ fun main() {
 
 }
 
-fun printArray2D(arr: Array<IntArray>, rowSize: Int, colSize: Int) {
+fun printArray2D(arr: Array<IntArray>) {
+
+    val rowSize = arr.size
+    val colSize = arr[0].size
+
     for (row in 0 ..< rowSize) {
         for (col in 0 ..< colSize) {
             print(arr[row][col])
@@ -60,7 +64,11 @@ fun printArray2D(arr: Array<IntArray>, rowSize: Int, colSize: Int) {
     }
 }
 
-fun printArray2D(arr: Array<Array<Int>>, rowSize: Int, colSize: Int) {
+fun printArray2D(arr: Array<Array<Int>>) {
+
+    val rowSize = arr.size
+    val colSize = arr[0].size
+
     for (row in 0 ..< rowSize) {
         for (col in 0 ..< colSize) {
             print(arr[row][col])

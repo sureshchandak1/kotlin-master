@@ -10,7 +10,7 @@ fun main() {
     }
 
     println("-----------------------")
-    printArray2D(arr, 3, 3)
+    printArray2D(arr)
     println("-----------------------")
 
     rowWiseSum(arr, 3, 3)

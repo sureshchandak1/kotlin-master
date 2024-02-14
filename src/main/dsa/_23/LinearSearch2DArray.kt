@@ -7,7 +7,7 @@ fun main(args: Array<String>) {
         intArrayOf(7, 9, 8)
     )
 
-    printArray2D(first, 3, 3)
+    printArray2D(first)
 
     println(isPresent(first, 3, 3, 3))
     println(isPresent(first, 30, 3, 3))

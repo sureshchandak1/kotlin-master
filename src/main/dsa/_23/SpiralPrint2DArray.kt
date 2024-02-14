@@ -11,7 +11,7 @@ fun main() {
         }
     }
 
-    printArray2D(arr, 3, 4)
+    printArray2D(arr)
     println("-------------------------------")
     val result = spiralPrint(arr)
     printArray(result.toIntArray())

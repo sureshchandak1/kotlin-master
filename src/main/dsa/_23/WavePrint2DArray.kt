@@ -9,7 +9,7 @@ fun main() {
         }
     }
 
-    printArray2D(arr, 3, 4)
+    printArray2D(arr)
     println("-------------------------------")
     wavePrint(arr, 3, 4)
 }
