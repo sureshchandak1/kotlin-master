@@ -36,7 +36,20 @@ fun printArray(arr: IntArray) {
     println()
 }
 
-fun printArray(arr: MutableList<Int>) {
+fun <T> printArray(arr: MutableList<T>) {
+    print("[")
+    val size = arr.size
+    for ((index, item) in arr.withIndex()) {
+        print("$item")
+        if (index < size - 1) {
+            print(", ")
+        }
+    }
+    print("]")
+    println()
+}
+
+fun <T> printArray(arr: MutableCollection<T>) {
     print("[")
     val size = arr.size
     for ((index, item) in arr.withIndex()) {
