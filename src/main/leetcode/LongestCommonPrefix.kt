@@ -1,5 +1,3 @@
-package easy
-
 // Longest Common Prefix
 
 fun main() {

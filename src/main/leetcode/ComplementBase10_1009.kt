@@ -1,5 +1,3 @@
-package easy
-
 import kotlin.math.pow
 
 fun main() {

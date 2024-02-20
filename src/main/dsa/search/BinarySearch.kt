@@ -1,6 +1,6 @@
 package search
 
-import easy.printArray
+import printArray
 
 // element should be in monotonic function
 

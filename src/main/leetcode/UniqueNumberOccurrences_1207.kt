@@ -1,10 +1,7 @@
-package easy
-
-
 fun main() {
-    val result1 = uniqueOccurrences(intArrayOf(1,2,2,1,1,3))
+    val result1 = uniqueOccurrences(intArrayOf(1, 2, 2, 1, 1, 3))
     println("$result1 -----------------------------")
-    val result2 = uniqueOccurrences(intArrayOf(-3,0,1,-3,1,1,1,-3,10,0))
+    val result2 = uniqueOccurrences(intArrayOf(-3, 0, 1, -3, 1, 1, 1, -3, 10, 0))
     println("$result2 -----------------------------")
 }
 

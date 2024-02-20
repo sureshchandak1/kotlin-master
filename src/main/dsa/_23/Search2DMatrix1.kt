@@ -1,6 +1,6 @@
 package _23
 
-import easy.printArray
+import printArray
 
 fun main() {
     val arr: Array<IntArray> = arrayOf(

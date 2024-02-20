@@ -1,6 +1,6 @@
 package _13
 
-import easy.printArray
+import printArray
 
 fun main(args: Array<String>) {
 

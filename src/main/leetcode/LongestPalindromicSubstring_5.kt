@@ -1,5 +1,3 @@
-package medium
-
 fun main() {
 
 }

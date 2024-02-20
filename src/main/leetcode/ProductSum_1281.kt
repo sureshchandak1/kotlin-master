@@ -1,5 +1,3 @@
-package easy
-
 /*
 *                   Input: n = 234
 *                   Output: 15

@@ -1,5 +1,3 @@
-package medium
-
 fun main() {
     val arr = intArrayOf(0, 10, 5, 2)
     val result = peakIndexInMountainArray(arr)

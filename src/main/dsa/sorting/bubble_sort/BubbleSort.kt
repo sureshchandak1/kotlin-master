@@ -1,6 +1,6 @@
 package sorting.bubble_sort
 
-import easy.printArray
+import printArray
 
 /*
 *   Space Complexity - O(1)

@@ -1,7 +1,3 @@
-package medium
-
-import easy.printArray
-
 fun main() {
     val arr = intArrayOf(3,1,-2,-5,2,-4)
     printArray(arr)

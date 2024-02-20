@@ -5,6 +5,7 @@ fun main() {
     str = ""
     println("$str -> ${reverse(str, (str.length - 1))} -> ${reverseUsingForLoop(str)}")
 
+    findCharFirstLastIndex("abaacdaefaah", 'a', 0)
     findCharFirstLastIndex("abaacdaefaah", 'a')
     findCharFirstLastIndex("abaacdaefaah", 'a', -1, -1, 0)
 
@@ -39,7 +40,7 @@ private fun reverseUsingForLoop(str: String): String {
     return stringBuilder.toString()
 }
 
-private fun findCharFirstLastIndex(str: String, ch: Char, index: Int = 0) {
+private fun findCharFirstLastIndex(str: String, ch: Char, index: Int) {
 
     if (str.length == index) {
         println("[ first = ${FindChar.fPosition} , last = ${FindChar.lPosition} ]")
@@ -55,6 +56,34 @@ private fun findCharFirstLastIndex(str: String, ch: Char, index: Int = 0) {
     }
 
     findCharFirstLastIndex(str, ch, index + 1)
+
+}
+
+private fun findCharFirstLastIndex(str: String, ch: Char) {
+
+    var startIndex = -1
+    var endIndex = -1
+
+    var start = 0
+    var end = str.length - 1
+
+    while (start <= end) {
+        if (startIndex == -1 && str[start] == ch) {
+            startIndex = start
+        }
+        if (endIndex == -1 && str[end] == ch) {
+            endIndex = end
+        }
+
+        if (startIndex != -1 && endIndex != -1) {
+            break
+        }
+
+        start++
+        end--
+    }
+
+    println("[ first = $startIndex , last = $endIndex ]")
 
 }
 

@@ -1,7 +1,7 @@
 package _21
 
 import _20.reverseArray
-import easy.printArray
+import printArray
 
 fun main(args: Array<String>) {
     val arr = intArrayOf(1, 2, 3, 4, 5, 6, 7)

@@ -1,5 +1,3 @@
-package easy
-
 fun main() {
     val result = findUnique(intArrayOf(2, 3, 1, 6, 3, 6, 2))
     println("Unique value is = $result")

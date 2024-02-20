@@ -1,5 +1,3 @@
-package medium
-
 import java.util.Arrays
 
 fun main() {

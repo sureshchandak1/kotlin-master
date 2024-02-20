@@ -1,5 +1,3 @@
-package easy
-
 fun main() {
     val arr = intArrayOf(0,1,0,3,12)
     printArray(arr)

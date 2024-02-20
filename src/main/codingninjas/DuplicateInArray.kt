@@ -1,6 +1,3 @@
-package easy
-
-
 fun main() {
     val result = findDuplicate(listOf(6, 3, 1, 5, 4, 3, 2))
     println("Duplicate element is = $result")

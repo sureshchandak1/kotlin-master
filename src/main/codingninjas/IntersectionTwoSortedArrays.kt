@@ -1,5 +1,3 @@
-package easy
-
 fun main() {
     val arr1 = listOf(1, 2, 3, 4, 5)
     val arr2 = listOf(3, 4, 5)

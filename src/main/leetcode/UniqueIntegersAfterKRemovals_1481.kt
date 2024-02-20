@@ -1,6 +1,3 @@
-package medium
-
-import easy.printArray
 import java.util.*
 
 

@@ -1,5 +1,3 @@
-package medium
-
 fun main() {
     val x = readln()
     println(reverse(x.toInt()))

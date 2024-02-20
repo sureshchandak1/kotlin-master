@@ -1,6 +1,6 @@
 package _20
 
-import easy.printArray
+import printArray
 
 fun main() {
     val arr = intArrayOf(0, 1, 0, 3, 12)

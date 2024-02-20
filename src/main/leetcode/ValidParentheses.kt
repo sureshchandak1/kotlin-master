@@ -1,5 +1,3 @@
-package easy
-
 fun main() {
     println(checkParentheses("()", 0, false))
     println(checkParentheses("()[]{}", 0, false))

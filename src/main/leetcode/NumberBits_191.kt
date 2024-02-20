@@ -1,5 +1,3 @@
-package easy
-
 fun main() {
     println(hammingWeight(11))
     println(decimalToBinary(11))

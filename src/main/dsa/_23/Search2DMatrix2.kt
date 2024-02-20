@@ -1,7 +1,5 @@
 package _23
 
-import easy.printArray
-
 fun main() {
     val arr: Array<IntArray> = arrayOf(
         intArrayOf(1, 4, 7, 11, 15),

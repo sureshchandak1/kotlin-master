@@ -1,5 +1,3 @@
-package medium
-
 // Find Prime number using Sieve method
 fun main() {
     println(countPrimes(40))
