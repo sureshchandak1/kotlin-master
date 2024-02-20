@@ -26,7 +26,7 @@ private fun getLength(arr: CharArray): Int {
     return count
 }
 
-fun reverseString(s: CharArray): String {
+private fun reverseString(s: CharArray): String {
 
     var start = 0
     var end = s.size - 1

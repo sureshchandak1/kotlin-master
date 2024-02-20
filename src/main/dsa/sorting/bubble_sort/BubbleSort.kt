@@ -20,11 +20,11 @@ fun bubbleSort(arr: IntArray) {
     val size = arr.size - 1
 
     var temp = 0
-    for (i in 0 ..< size) {
+    for (round in 0 ..< size) {
 
         var swapped = false
 
-        for (j in 0 ..< size - i) {
+        for (j in 0 ..< size - round) {
             if (arr[j] > arr[j + 1]) {
                 temp = arr[j]
                 arr[j] = arr[j + 1]
@@ -62,4 +62,31 @@ private fun bubbleSort(arr: IntArray, n: Int) {
             break
         }
     }
+}
+
+// Using Recursion solve bubble sort
+private fun sortArray(arr: IntArray, n: Int) {
+
+    // Base case - already sorted
+    if (n == 0 || n == 1) {
+        return
+    }
+
+    var temp = 0
+    var swapped = false
+    // Move largest element to end position
+    for (i in 0 ..< n - 1) {
+        if (arr[i] > arr[i + 1]) {
+            temp = arr[i]
+            arr[i] = arr[i + 1]
+            arr[i + 1] = temp
+
+            swapped = true
+        }
+    }
+
+    if (swapped) {
+        sortArray(arr, n - 1)
+    }
+
 }
