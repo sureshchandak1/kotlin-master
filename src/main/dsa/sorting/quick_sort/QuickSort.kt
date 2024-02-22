@@ -1,4 +1,4 @@
-package lecture036_Recursion_Day6
+package sorting.quick_sort
 
 import printArray
 
