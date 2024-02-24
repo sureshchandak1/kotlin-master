@@ -31,6 +31,7 @@ private fun subsets(nums: IntArray, output: ArrayList<Int>, index: Int, ans: Arr
     output.add(element)
     subsets(nums, output, index + 1, ans)
 
+    // Backtracking
     output.removeAt(output.size - 1)
 
 }

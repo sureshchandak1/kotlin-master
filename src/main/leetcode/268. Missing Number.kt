@@ -1,6 +1,26 @@
+import java.util.*
+
 fun main() {
     val arr = intArrayOf(9,6,4,2,3,5,7,0,1)
     println(missingNum2(arr))
+    println(solve(arr))
+}
+
+// Using sorting
+private fun solve(nums: IntArray): Int {
+    Arrays.sort(nums)
+
+    var ans = 0
+    for (value in nums) {
+        if (ans == value) {
+            ans++
+        } else if (ans < value) {
+            return ans
+        }
+    }
+
+    return ans
+
 }
 
 private fun missingNum1(nums: IntArray): Int {
