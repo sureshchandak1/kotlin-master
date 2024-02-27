@@ -64,7 +64,7 @@ fun printArray2D(arr: Array<IntArray>) {
     }
 }
 
-fun printArray2D(arr: Array<Array<Int>>) {
+fun <T> printArray2D(arr: Array<Array<T>>) {
 
     val rowSize = arr.size
     val colSize = arr[0].size
@@ -76,4 +76,19 @@ fun printArray2D(arr: Array<Array<Int>>) {
         }
         println()
     }
+}
+
+fun <T> printArray2D(arr: MutableList<MutableList<T>>) {
+
+    val rowSize = arr.size
+    val colSize = arr[0].size
+
+    for (row in 0 ..< rowSize) {
+        for (col in 0 ..< colSize) {
+            print(arr[row][col])
+            print("  ")
+        }
+        println()
+    }
+
 }

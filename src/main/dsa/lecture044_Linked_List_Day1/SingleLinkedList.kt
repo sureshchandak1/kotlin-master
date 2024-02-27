@@ -2,12 +2,12 @@ package lecture044_Linked_List_Day1
 
 class SingleLinkedList {
 
-    var head: Node? = null // head of list (Starting node)
-    var tail: Node? = null // end of list (Ending node)
+    private var head: Node? = null // head of list (Starting node)
+    private var tail: Node? = null // end of list (Ending node)
 
     companion object {
 
-        class Node(var data: Int) {
+        private class Node(var data: Int) {
             var next: Node? = null
         }
 
@@ -52,19 +52,22 @@ class SingleLinkedList {
                 linkedList.head = newNode
                 linkedList.tail = newNode
             } else {
+
+                if (position == 1) {
+                    insertAtHead(linkedList, data)
+                    return linkedList
+                }
+
                 var count = 1
                 var currentNode = linkedList.head
-                while (count < position) {
+                while (count < position - 1) {
                     count++
-                    if (count < position) {
-                        currentNode = currentNode?.next
-                    }
+                    currentNode = currentNode?.next
                 }
 
                 if (currentNode != null) {
                     if (currentNode.next == null) {
-                        currentNode.next = newNode
-                        linkedList.tail = newNode
+                        insertAtTail(linkedList, data)
                     } else {
                         val nextNode = currentNode.next
 
@@ -97,6 +100,38 @@ class SingleLinkedList {
             return linkedList
         }
 
+        fun deleteAtPosition(linkedList: SingleLinkedList, position: Int): SingleLinkedList {
+
+            if (position == 1) {
+                linkedList.head = linkedList.head?.next
+                return linkedList
+            }
+
+            var previousNode = linkedList.head
+            var currentNode = linkedList.head
+            var count = 1
+            while (count < position) {
+                previousNode = currentNode
+                currentNode = currentNode?.next
+                count++
+            }
+
+            if (previousNode != null) {
+                if (currentNode?.next != null) {
+                    previousNode.next = currentNode.next
+                } else {
+                    previousNode.next = null
+                    linkedList.tail = previousNode
+                }
+            }
+
+            // force Java garbage collection
+            System.gc()
+            //Runtime.getRuntime().gc()
+
+            return linkedList
+        }
+
         fun size(linkedList: SingleLinkedList): Int {
             var size = 0
 
@@ -120,6 +155,14 @@ class SingleLinkedList {
             println()
         }
 
+        fun printHead(linkedList: SingleLinkedList) {
+            println("Head = ${linkedList.head?.data}")
+        }
+
+        fun printTail(linkedList: SingleLinkedList) {
+            println("Tail = ${linkedList.tail?.data}")
+        }
+
     }
 
 
@@ -141,11 +184,24 @@ fun main() {
     singleLinkedList = SingleLinkedList.insertAtPosition(singleLinkedList, 50, 4)
     SingleLinkedList.printLinkedList(singleLinkedList)
     singleLinkedList = SingleLinkedList.insertAtPosition(singleLinkedList, 60, 8)
+    SingleLinkedList.printLinkedList(singleLinkedList)
+    singleLinkedList = SingleLinkedList.insertAtPosition(singleLinkedList, 70, 1)
 
-    singleLinkedList = SingleLinkedList.insertAtTail(singleLinkedList, 70)
+    singleLinkedList = SingleLinkedList.insertAtTail(singleLinkedList, 80)
+
+    SingleLinkedList.printLinkedList(singleLinkedList)
+    println("Delete at position")
+    singleLinkedList = SingleLinkedList.deleteAtPosition(singleLinkedList, 4) // middle position
+    SingleLinkedList.printLinkedList(singleLinkedList)
+    singleLinkedList = SingleLinkedList.deleteAtPosition(singleLinkedList, 1) // start position
+    SingleLinkedList.printLinkedList(singleLinkedList)
+    singleLinkedList = SingleLinkedList.deleteAtPosition(singleLinkedList, 8) // last position
+
 
     SingleLinkedList.printLinkedList(singleLinkedList)
     println("Size = ${SingleLinkedList.size(singleLinkedList)}")
+    SingleLinkedList.printHead(singleLinkedList)
+    SingleLinkedList.printTail(singleLinkedList)
 
 
 }
