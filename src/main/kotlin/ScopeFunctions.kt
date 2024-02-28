@@ -40,6 +40,30 @@ fun main() {
     numbers.also { println("The list elements before adding new one: $it") }.add("four")
     println(numbers)
 
+    var a: String? = null
+
+    a?.let {
+        // not null do something
+        println(it)
+        println("a is not null")
+    }
+    // Elvis operator - ?:
+    a ?: println("a is null")
+
+    a ?: run {
+        println("a is null")
+        println("The King has left the building")
+    }
+
+    // Combining the two
+    a?.let {
+        println("a is not null")
+        println("Wop-bop-a-loom-a-boom-bam-boom")
+    } ?: run {
+        println("a is null")
+        println("When things go null, don't go with them")
+    }
+
 }
 
 private data class Employee(var name: String = "", var age: Int = 18)
