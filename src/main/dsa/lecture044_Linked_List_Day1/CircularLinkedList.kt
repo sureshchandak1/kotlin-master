@@ -87,6 +87,20 @@ class CircularLinkedList {
             println()
 
         }
+
+        fun isCircularLinkedList(linkedList: CircularLinkedList): Boolean {
+
+            if (linkedList.tail == null) {
+                return true
+            }
+
+            var temp: Node? = linkedList.tail?.next
+            while (temp != null && temp != linkedList.tail) {
+                temp = temp.next
+            }
+
+            return temp == linkedList.tail
+        }
     }
 }
 
@@ -112,5 +126,7 @@ fun main() {
     println("Delete element")
     linkedList = CircularLinkedList.delete(linkedList, 3)
     CircularLinkedList.printLinkedList(linkedList)
+
+    println("isCircularLinkedList = ${CircularLinkedList.isCircularLinkedList(linkedList)}")
 
 }

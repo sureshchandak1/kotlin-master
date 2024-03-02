@@ -163,6 +163,20 @@ class SingleLinkedList {
             println("Tail = ${linkedList.tail?.data}")
         }
 
+        fun isCircularLinkedList(linkedList: SingleLinkedList): Boolean {
+
+            if (linkedList.head == null) {
+                return true
+            }
+
+            var temp: Node? = linkedList.head?.next
+            while (temp != null && temp != linkedList.head) {
+                temp = temp.next
+            }
+
+            return temp == linkedList.head
+        }
+
     }
 
 
@@ -202,6 +216,7 @@ fun main() {
     println("Size = ${SingleLinkedList.size(singleLinkedList)}")
     SingleLinkedList.printHead(singleLinkedList)
     SingleLinkedList.printTail(singleLinkedList)
+    println("isCircularLinkedList = ${SingleLinkedList.isCircularLinkedList(singleLinkedList)}")
 
 
 }
