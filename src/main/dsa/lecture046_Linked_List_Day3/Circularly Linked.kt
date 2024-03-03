@@ -18,7 +18,7 @@ private fun isCircular(head: Node?): Boolean {
 
     var curr: Node? = head.next
 
-    while (curr != null && curr !== head) {
+    while (curr != null && curr != head) {
         curr = curr.next
     }
 

@@ -88,6 +88,23 @@ class CircularLinkedList {
 
         }
 
+        fun size(linkedList: CircularLinkedList): Int {
+
+            if (linkedList.tail == null) {
+                return 0
+            }
+
+            var len = 1
+            var curr = linkedList.tail?.next
+
+            while (curr != linkedList.tail) {
+                len++
+                curr = curr?.next
+            }
+
+            return len
+        }
+
         fun isCircularLinkedList(linkedList: CircularLinkedList): Boolean {
 
             if (linkedList.tail == null) {
@@ -122,10 +139,12 @@ fun main() {
     CircularLinkedList.printLinkedList(linkedList)
     linkedList = CircularLinkedList.insert(linkedList, 3, 4)
     CircularLinkedList.printLinkedList(linkedList)
+    println("Size = ${CircularLinkedList.size(linkedList)}")
 
     println("Delete element")
     linkedList = CircularLinkedList.delete(linkedList, 3)
     CircularLinkedList.printLinkedList(linkedList)
+    println("Size = ${CircularLinkedList.size(linkedList)}")
 
     println("isCircularLinkedList = ${CircularLinkedList.isCircularLinkedList(linkedList)}")
 
