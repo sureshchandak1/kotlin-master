@@ -61,23 +61,25 @@ private fun getLength(head: Node): Int {
 }
 
 class Node {
-
     var data: Int
     var next: Node?
+    var child: Node?
 
     constructor() {
         this.data = 0
         this.next = null
+        this.child = null
     }
 
     constructor(data: Int) {
         this.data = data
         this.next = null
+        this.child = null
     }
 
-    constructor(data: Int, next: Node?) {
+    constructor(data: Int, next: Node?, child: Node?) {
         this.data = data
         this.next = next
+        this.child = child
     }
-
 }
