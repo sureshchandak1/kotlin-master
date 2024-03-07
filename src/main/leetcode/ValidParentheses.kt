@@ -1,43 +1,51 @@
+import java.util.*
+
 fun main() {
-    println(checkParentheses("()", 0, false))
-    println(checkParentheses("()[]{}", 0, false))
-    println(checkParentheses("(]", 0, false))
-    println(checkParentheses("{[]}", 0, false))
-    println(checkParentheses("{(]}", 0, false))
+    println(checkParentheses("()"))
+    println(checkParentheses("()[]{}"))
+    println(checkParentheses("(]"))
+    println(checkParentheses("{[]}"))
+    println(checkParentheses("{(]}"))
     println(checkParentheses("{[]}"))
 }
 
-private val map: MutableMap<Char, Char> = mutableMapOf(
-    Pair('(', ')'),
-    Pair('{', '}'),
-    Pair('[', ']')
-)
+private fun checkParentheses(s: String): Boolean {
 
-private fun checkParentheses(str: String, index: Int = 0, result: Boolean = false) : Boolean {
+    val size = s.length
 
-    if (index >= str.length) {
-        return result
-    }
+    val stack = Stack<Char>()
 
-    val currentChar = str[index]
-    val nextChar = str[index + 1]
+    for (i in 0 ..< size) {
 
-    val ans = nextChar == map[currentChar]
+        val ch = s[i]
 
-    return checkParentheses(str, index + 2, ans)
-}
+        if (ch == '(' || ch == '{' || ch == '[') {
+            stack.push(ch)
+        } else {
 
-private fun checkParentheses(str: String) : Boolean {
+            if (!stack.empty()) {
+                val top = stack.peek()
 
-    str.toCharArray().forEach { element ->
-        val closePar = map[element]
-        closePar?.let {
-            if (!str.contains(closePar.toString())) {
+                if ((ch == ')' && top == '(') ||
+                    (ch == '}' && top == '{') ||
+                    (ch == ']' && top == '[')
+                ) {
+                    stack.pop()
+                } else {
+                    return false
+                }
+
+            } else {
                 return false
             }
+
         }
     }
 
-    return true
+    if (stack.empty()) {
+        return true
+    } else {
+        return false
+    }
 }
 
