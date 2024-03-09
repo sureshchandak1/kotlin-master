@@ -3,6 +3,53 @@ package lecture054_Stack_Implementation
 import printArray
 
 fun main() {
+    val stackLinkedList = StackLinkedList()
+
+    /*
+    stackLinkedList.push(10)
+    stackLinkedList.push(20)
+    stackLinkedList.push(30)
+    stackLinkedList.push(40)
+    stackLinkedList.push(50)
+
+    stackLinkedList.print()
+
+    println("Pop element = ${stackLinkedList.pop()?.data}")
+    stackLinkedList.print()
+
+    println("Pop element = ${stackLinkedList.pop()?.data}")
+    stackLinkedList.print()
+
+    stackLinkedList.push(40)
+    stackLinkedList.push(50)
+
+    stackLinkedList.print()
+
+    println("Peek element = ${stackLinkedList.peek()?.data}")
+
+     */
+
+    stackLinkedList.push(10)
+
+    stackLinkedList.print()
+
+    println("Pop element = ${stackLinkedList.pop()?.data}")
+    stackLinkedList.print()
+
+    stackLinkedList.push(10)
+    stackLinkedList.push(20)
+
+    stackLinkedList.print()
+
+    println("Pop element = ${stackLinkedList.pop()?.data}")
+    stackLinkedList.print()
+
+    println("Pop element = ${stackLinkedList.pop()?.data}")
+    stackLinkedList.print()
+
+}
+
+/*fun main() {
     val stackArray = StackArray(5)
 
     stackArray.print()
@@ -35,7 +82,7 @@ fun main() {
     println("Peek = ${stackArray.peek()}")
     stackArray.print()
     println("Size = ${stackArray.size()}")
-}
+}*/
 
 private class StackArray(private val size: Int) {
 
@@ -90,7 +137,75 @@ private class StackArray(private val size: Int) {
 
 }
 
-private class StackLinkedList
+private class StackLinkedList {
+
+    private var head: StackNode? = null
+    private var tail: StackNode? = null
+
+    fun push(data: Int) {
+        val newNode = StackNode(data)
+        if (head == null) {
+            head = newNode
+            tail = newNode
+        } else {
+            tail?.next = newNode
+            tail = newNode
+        }
+    }
+
+    fun pop(): StackNode? {
+
+        if (head == null) {
+            return null
+        }
+
+        if (head?.next == null) {
+            val value = head
+            head = null
+            tail = null
+            return value
+        }
+
+        var prev: StackNode? = null
+        var curr = head
+
+        while (curr?.next != null) {
+            prev = curr
+            curr = curr.next
+        }
+
+        prev?.next = tail?.next
+        tail = prev
+
+        return curr
+
+    }
+
+    fun peek(): StackNode? {
+
+        if (head == null) {
+            return null
+        }
+
+        return tail
+    }
+
+    fun print() {
+        print("[")
+        var curr = head
+        while (curr != null) {
+            print("${curr.data}")
+            if (curr.next != null) {
+                print(", ")
+            }
+
+            curr = curr.next
+        }
+        print("]")
+        println()
+    }
+
+}
 
 private class StackNode {
 
