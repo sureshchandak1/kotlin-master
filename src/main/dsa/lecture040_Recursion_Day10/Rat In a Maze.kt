@@ -24,7 +24,7 @@ private fun findPath(arr: Array<IntArray>, n: Int): ArrayList<String> {
     val srcY = 0
 
     val visited = Array(n) { IntArray(n) }
-    // intialize with 0
+    // initialize with 0
     for (i in 0..<n) {
         for (j in 0..<n) {
             visited[i][j] = 0

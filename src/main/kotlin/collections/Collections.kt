@@ -1,5 +1,8 @@
 package collections
 
+import java.util.*
+
+
 /*
 *  - Mutable List (Can be changed i.e. elements can be added/removed/replaced)
 *  - Immutable List (Can't be changed)
@@ -34,4 +37,23 @@ fun main() {
 
     val map = mapOf<Int, String>(1 to "Hello", 2 to "World") // Immutable Map (not allow to change add/remove/replace)
     println(map)
+
+    val accountMap: MutableMap<String, Int> = HashMap()
+    accountMap["1"] = 400
+    accountMap["2"] = 200
+    accountMap["3"] = 1000
+    accountMap["4"] = 100
+    accountMap["5"] = 1200
+    println(accountMap.toString())
+
+    val sortedMap1: Map<String, Int> = accountMap.toList().sortedBy { it.second }.toMap()
+    val sortedMap2: Map<String, Int> =
+        accountMap.toList().sortedWith(compareBy( { it.second }, { it.second } ) ).toMap()
+    val sortedMap3: Map<String, Int> =
+        accountMap.toList().sortedWith(compareByDescending { it.second } ).toMap()
+
+    println(sortedMap1.toString())
+    println(sortedMap2.toString())
+    println(sortedMap3.toString())
+
 }

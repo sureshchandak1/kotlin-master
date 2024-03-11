@@ -3,7 +3,7 @@ package lecture036_Recursion_Day6
 import printArray
 
 fun main() {
-    val arr1 = mutableListOf(2,4,1,6,9 ,9,9,9,9,9)
+    val arr1 = mutableListOf(2, 4, 1, 6, 9, 9, 9, 9, 9, 9)
     printArray(arr1)
     quickSort(arr1, 0, arr1.size - 1)
     printArray(arr1)
