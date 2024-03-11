@@ -6,6 +6,7 @@ import java.util.*
 
 fun main() {
     printArray(nextSmallerElement(arrayListOf(2, 1, 4, 3), 4))
+    printArray(nextSmallerElement(arrayListOf(2, 1, 4, 2, 3), 5))
     printArray(nextSmallerElement(arrayListOf(1, 3, 2), 3))
     printArray(nextSmallerElement(arrayListOf(1, 2, 3, 4), 4))
 }
