@@ -16,7 +16,7 @@ fun main() {
     println("Rear = ${deque.getRear()}")
 }
 
-class Deque internal constructor(n: Int) {
+private class Deque(n: Int) {
 
     private val arr = IntArray(n)
     private var front: Int
