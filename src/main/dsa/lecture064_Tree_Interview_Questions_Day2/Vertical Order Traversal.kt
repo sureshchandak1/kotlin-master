@@ -3,6 +3,9 @@ package lecture064_Tree_Interview_Questions_Day2
 import lecture062_Tree_Introduction.TreeNode
 import java.util.*
 
+/*
+*  https://www.geeksforgeeks.org/problems/print-a-binary-tree-in-vertical-order/1
+* */
 
 fun main() {
 
@@ -10,7 +13,7 @@ fun main() {
 
 private fun verticalOrderTraversal(root: TreeNode?): ArrayList<Int> {
 
-    val nodes: Map<Int, Map<Int, List<Int>>> = HashMap()
+    val nodes = TreeMap<Int, TreeMap<Int, MutableList<Int>>>()
     val q: Queue<PairFirst> = LinkedList()
     val ans = ArrayList<Int>()
 
@@ -30,7 +33,8 @@ private fun verticalOrderTraversal(root: TreeNode?): ArrayList<Int> {
 
         node?.let {
 
-            nodes[hd][lvl] = node.data
+            //nodes[hd][lvl] = node.data
+            nodes.getOrPut(hd) { TreeMap() }.getOrPut(lvl) { mutableListOf() }.add(node.data)
 
             if (node.left != null) {
                 q.add(PairFirst(root.left!!, PairSecond(hd-1, lvl+1)))
