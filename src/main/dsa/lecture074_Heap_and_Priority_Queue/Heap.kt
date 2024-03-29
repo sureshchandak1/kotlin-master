@@ -41,6 +41,7 @@ private class Heap {
         }
     }
 
+    // delete from top
     fun delete() {
         if (size == 0) {
             println("Nothing to delete")
