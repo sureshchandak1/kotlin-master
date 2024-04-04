@@ -124,7 +124,7 @@ private class Trie {
     }
 }
 
-class TrieNode(ch: Char) {
+private class TrieNode(ch: Char) {
 
     var data: Char = ch
     val children: Array<TrieNode?> = Array(26) { null }
