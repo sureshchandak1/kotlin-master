@@ -19,10 +19,19 @@ fun main() {
 
     arr = intArrayOf(0, 19, 20, 14, 5, 13, 6, 7)
     printArray(findMedian(arr, arr.size))
+
+    arr = intArrayOf(1, 2, 3)
+    printArray(findMedian(arr, arr.size))
+
+    arr = intArrayOf(9, 9)
+    printArray(findMedian(arr, arr.size))
+
+    arr = intArrayOf(4)
+    printArray(findMedian(arr, arr.size))
 }
 
 
-private var median = -1
+private var median = 0
 
 private fun findMedian(arr: IntArray, n: Int): IntArray {
 
@@ -52,6 +61,7 @@ private fun callMedian(element: Int, maxHeap: PriorityQueue<Int>, minHeap: Prior
 
         1 -> if (element > median) {
             minHeap.add(element)
+            println("minHeap peek = ${minHeap.peek()}, maxHeap peek = ${maxHeap.peek()}")
             median = (minHeap.peek() + maxHeap.peek()) / 2
         } else {
             minHeap.add(maxHeap.remove())
