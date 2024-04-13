@@ -4,6 +4,8 @@ import java.util.*
 
 /**
  * https://www.naukri.com/code360/problems/detect-cycle-in-a-directed-graph_1062626
+ *   T.C = 0(N + E)
+ *   S.C = 0(N + E)
  */
 fun main() {
     var n = 5
