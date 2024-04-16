@@ -13,7 +13,7 @@ private fun deleteDuplicates(head: ListNode?): ListNode? {
     while (curr != null) {
 
         var next: ListNode? = curr.next
-        while (next != null && curr.`val` == next.`val`) {
+        while (next != null && curr.data == next.data) {
             next = next.next
         }
 

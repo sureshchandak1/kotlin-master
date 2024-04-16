@@ -22,7 +22,7 @@ private fun reverseList(head: ListNode?): ListNode? {
     return prev
 }
 
-class ListNode(var `val`: Int) {
+class ListNode(var data: Int) {
     var next: ListNode? = null
 }
 
