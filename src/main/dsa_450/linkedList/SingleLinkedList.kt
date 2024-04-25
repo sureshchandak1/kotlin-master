@@ -74,6 +74,27 @@ internal class SingleLinkedList {
         return size
     }
 
+    fun makeLoop(x: Int) {
+
+        if (x == 0) return
+
+        var loopStartNode = head
+
+        var currentPosition = 1
+        while (loopStartNode != null && currentPosition < x) {
+            loopStartNode = loopStartNode.next
+            currentPosition++
+        }
+
+        var lastNode = head
+
+        while (lastNode?.next != null) {
+            lastNode = lastNode.next
+        }
+
+        lastNode?.next = loopStartNode
+    }
+
     fun print(head: ListNode<Int>?) {
         print("[")
         var curr = head
