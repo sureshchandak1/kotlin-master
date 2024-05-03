@@ -1,20 +1,24 @@
 package lecture058_Stack_Questions
 
+import printArray
+
 fun main() {
     val nStack = NStack(3, 6)
     nStack.push(10, 1)
     nStack.push(20, 1)
     nStack.push(30, 2)
-
+    nStack.print()
     nStack.pop(1)
+    nStack.print()
     nStack.pop(2)
+    nStack.print()
 }
 
 // n = number of stacks
 // s = size of array
 private class NStack(n: Int, s: Int) {
 
-    private val arr = IntArray(s)
+    private val arr = IntArray(s) { 0 }
     private val top = IntArray(n)
     private val next = IntArray(s)
 
@@ -76,6 +80,12 @@ private class NStack(n: Int, s: Int) {
 
         freespot = index
 
+        arr[index] = 0
+
         return arr[index]
+    }
+
+    fun print() {
+        printArray(arr)
     }
 }
