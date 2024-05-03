@@ -1,7 +1,7 @@
 package stacks_and_queues
 
 fun main() {
-    val s = Stack(2)
+    val s = MyStack(2)
 
     s.push(10)
     s.push(20)
@@ -19,7 +19,7 @@ fun main() {
     s.push(60)
 }
 
-private class Stack(private val size: Int) {
+private class MyStack(private val size: Int) {
 
     val arr = IntArray(size)
     var top = -1
