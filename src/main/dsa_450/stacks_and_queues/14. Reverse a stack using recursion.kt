@@ -1,5 +1,6 @@
 package stacks_and_queues
 
+import printStack
 import java.util.Stack
 
 /**
@@ -14,9 +15,9 @@ fun main() {
     stack.push(3)
     stack.push(4)
 
-    println(stack.toString())
+    printStack(stack)
     reverseStack(stack)
-    println(stack.toString())
+    printStack(stack)
 }
 
 private fun reverseStack(stack: Stack<Int>) {

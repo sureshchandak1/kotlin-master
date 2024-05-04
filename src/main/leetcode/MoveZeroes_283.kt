@@ -1,3 +1,5 @@
+import java.util.Stack
+
 fun main() {
     val arr = intArrayOf(0,1,0,3,12)
     printArray(arr)
@@ -82,6 +84,20 @@ fun <T> printArray(arr: MutableCollection<T>) {
             print(", ")
         }
     }
+    print("]")
+    println()
+}
+
+fun <T> printStack(s: Stack<T>) {
+    val stack = s.clone() as Stack<*>
+    print("[")
+    while (!stack.isEmpty()) {
+        print(stack.pop())
+        if (!stack.isEmpty()) {
+            print(", ")
+        }
+    }
+
     print("]")
     println()
 }

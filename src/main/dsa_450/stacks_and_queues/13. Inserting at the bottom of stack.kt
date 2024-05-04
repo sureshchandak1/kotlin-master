@@ -1,5 +1,6 @@
 package stacks_and_queues
 
+import printStack
 import java.util.Stack
 
 fun main() {
@@ -7,13 +8,13 @@ fun main() {
     stack.push(1)
     stack.push(2)
     stack.push(3)
-    println(stack.toString())
+    printStack(stack)
 
     insertAtBottom(stack, 4)
-    println(stack.toString())
+    printStack(stack)
 
     insertAtBottom(stack, 5)
-    println(stack.toString())
+    printStack(stack)
 }
 
 private fun insertAtBottom(stack: Stack<Int>, data: Int) {
