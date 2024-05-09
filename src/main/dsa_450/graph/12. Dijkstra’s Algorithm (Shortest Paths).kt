@@ -2,9 +2,6 @@ package graph
 
 import printArray
 import java.util.*
-import kotlin.Comparator
-import kotlin.collections.ArrayList
-import kotlin.collections.HashMap
 
 /**
  *   Shortest Paths from Source to all Vertices
@@ -105,3 +102,72 @@ private class PairComparator : Comparator<Pair<Int, Int>> {
         return 0
     }
 }
+
+private fun dijkstra(vertices: Int, adj: ArrayList<ArrayList<ArrayList<Int>>>, source: Int): IntArray {
+
+    // create distance array
+    val distance = IntArray(vertices) { Int.MAX_VALUE }
+
+    // create priorityQueue
+    val pq: PriorityQueue<GraphPair> = PriorityQueue(PairComparator2())
+
+    distance[source] = 0
+    pq.add(GraphPair(0, source))
+
+    while (!pq.isEmpty()) {
+        val top = pq.peek()
+
+        val nodeDistance = top.distance
+        val topNode = top.node
+
+        pq.remove(top)
+
+        val neighbors: ArrayList<ArrayList<Int>> = adj[topNode]
+        for (neighbor: ArrayList<Int> in neighbors) {
+            if (nodeDistance + neighbor[1] < distance[neighbor[0]]) {
+                var record: GraphPair? = null
+                for (p in pq) {
+                    if (p.distance == distance[neighbor[0]] && p.node == neighbor[0]) {
+                        record = p
+                        break
+                    }
+                }
+
+                if (record != null) {
+                    pq.remove(record)
+                }
+
+                // distance update
+                distance[neighbor[0]] = nodeDistance + neighbor[1]
+                // add in pq
+                pq.add(GraphPair(distance[neighbor[0]], neighbor[0]))
+            }
+        }
+    }
+
+    return distance
+}
+
+private class PairComparator2 : Comparator<GraphPair> {
+    override fun compare(p1: GraphPair?, p2: GraphPair?): Int {
+        if (p1 == null || p2 == null) return 0
+        if (p1.distance < p2.distance) return -1
+        else if (p1.distance > p2.distance) return 1
+        return 0
+    }
+}
+
+private class GraphPair(distance: Int, node: Int) {
+    var distance: Int = 0
+    var node: Int = 0
+
+    init {
+        this.distance = distance
+        this.node = node
+    }
+}
+
+
+
+
+
