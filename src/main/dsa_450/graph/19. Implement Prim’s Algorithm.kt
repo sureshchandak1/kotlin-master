@@ -1,6 +1,7 @@
 package graph
 
 import printArray
+import java.util.PriorityQueue
 
 /**
  *      ** Spanning Tree **
@@ -18,7 +19,12 @@ fun main() {
         arrayListOf(2, 5, 5), arrayListOf(3, 2, 3), arrayListOf(3, 5, 7), arrayListOf(4, 1, 6), arrayListOf(4, 2, 8),
         arrayListOf(4, 5, 9), arrayListOf(5, 2, 5), arrayListOf(5, 3, 7), arrayListOf(5, 4, 9)
     )
-    val result = calculatePrimsMST(n, m, edges)
+    var result = calculatePrimsMST(n, m, edges)
+    for (ans in result) {
+        printArray(ans)
+    }
+    println("-----------------------------------------")
+    result = calculatePrimsMST2(n, m, edges)
     for (ans in result) {
         printArray(ans)
     }
@@ -94,3 +100,83 @@ private fun calculatePrimsMST(n: Int, m: Int, edges: ArrayList<ArrayList<Int>>):
 
     return result
 }
+
+// using PriorityQueue
+// Time complexity : O(E Log V)), Space complexity : O(V)
+private fun calculatePrimsMST2(n: Int, m: Int, edges: ArrayList<ArrayList<Int>>): ArrayList<ArrayList<Int>> {
+
+    // Create adj list
+    // pair = connected node, weight
+    val adj: MutableMap<Int, MutableList<Pair<Int, Int>>> = HashMap()
+    for (i in 0 ..< m) {
+        val u = edges[i][0]
+        val v = edges[i][1]
+        val w = edges[i][2]
+
+        adj.putIfAbsent(u, ArrayList())
+        adj[u]!!.add(Pair(v, w))
+
+        adj.putIfAbsent(v, ArrayList())
+        adj[v]!!.add(Pair(u, w))
+    }
+
+    // array index are indicate node, index = node
+    // node start from 1
+    val key = IntArray(n + 1) { Int.MAX_VALUE }
+    val inMST = BooleanArray(n + 1) { false }
+    val parent = IntArray(n + 1) { -1 }
+    val minHeap = PriorityQueue<KeyPair>()
+
+    // start algo , start node is 1
+    key[1] = 0
+    parent[1] = -1
+    minHeap.add(KeyPair(1, 0))
+
+    while (!minHeap.isEmpty()) {
+        val top = minHeap.poll()
+
+        val uVertex = top.v
+
+        // mark min node as true
+        inMST[uVertex] = true
+
+        // check its adjacent nodes
+        if (adj.containsKey(uVertex)) {
+            val neighbors: MutableList<Pair<Int, Int>> = adj[uVertex]!!
+            for (neighbor: Pair<Int, Int> in neighbors) {
+                val vVertex = neighbor.first // node
+                val weight = neighbor.second // weight
+
+                if (!inMST[vVertex] && weight < key[vVertex]) {
+                    key[vVertex] = weight
+                    parent[vVertex] = uVertex
+                    minHeap.add(KeyPair(vVertex, key[vVertex]))
+                }
+            }
+        }
+    }
+
+    val result = ArrayList<ArrayList<Int>>()
+    for (i in 2..n) {
+        val list = ArrayList<Int>()
+        list.add(parent[i])
+        list.add(i)
+        list.add(key[i])
+
+        result.add(list)
+    }
+
+    return result
+}
+
+private class KeyPair(val v: Int, val wt: Int) : Comparable<KeyPair> {
+
+    override fun compareTo(that: KeyPair): Int {
+        return this.wt - that.wt
+    }
+
+}
+
+
+
+
