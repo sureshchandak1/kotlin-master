@@ -11,6 +11,7 @@ fun main() {
 
 }
 
+// Depth-First Search (DFS)
 private fun parseTree(str: String): TreeNode? {
 
     if (str == "") {
@@ -54,7 +55,7 @@ private fun parseTree(str: String): TreeNode? {
             }
         }
     }
-    // Return the root node of the subtree created
+
     return root
 }
 
