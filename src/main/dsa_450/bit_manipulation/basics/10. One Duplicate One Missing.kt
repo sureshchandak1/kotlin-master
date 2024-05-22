@@ -20,9 +20,7 @@ private fun findDuplicateMissing(arr: IntArray) {
     }
 
     val mask = -ans // 2's complement
-
-    // right most set bit mask
-    val rsbMask = ans and mask
+    val rsbMask = ans and mask // right most set bit mask
 
     var ans1 = 0
     var ans2 = 0
