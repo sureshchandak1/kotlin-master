@@ -6,12 +6,36 @@ package searching_and_sorting
  *    Space complexity: O(1)
  */
 fun main() {
-    val arr = longArrayOf(1,2,8,10,11,12,19)
+    val arr = intArrayOf(1, 2, 8, 10, 11, 12, 19)
     println(findFloor(arr, arr.size, 0))
     println(findFloor(arr, arr.size, 5))
+
+    println(lowerBound(arr, arr.size, 0))
+    println(lowerBound(arr, arr.size, 5))
 }
 
-private fun findFloor(arr: LongArray, n: Int, x: Long): Int {
+private fun lowerBound(arr: IntArray, n: Int, x: Int): Int {
+
+    var low = 0
+    var high = n - 1
+    var ans = n
+
+    while (low <= high) {
+
+        val mid = (low + high) / 2
+
+        if (arr[mid] >= x) {
+            ans = mid
+            high = mid - 1 //look for smaller index on the left
+        } else {
+            low = mid + 1 // look on the right
+        }
+    }
+
+    return ans
+}
+
+private fun findFloor(arr: IntArray, n: Int, x: Int): Int {
 
     // If last element is smaller than x
     if (x >= arr[n - 1]) return n - 1
