@@ -35,7 +35,7 @@ private fun lowerBound(arr: IntArray, n: Int, x: Int): Int {
     return ans
 }
 
-private fun findFloor(arr: IntArray, n: Int, x: Int): Int {
+internal fun findFloor(arr: IntArray, n: Int, x: Int): Int {
 
     // If last element is smaller than x
     if (x >= arr[n - 1]) return n - 1
