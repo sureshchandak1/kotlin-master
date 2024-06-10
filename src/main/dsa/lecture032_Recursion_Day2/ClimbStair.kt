@@ -1,20 +1,16 @@
 package lecture032_Recursion_Day2
 
 fun main() {
-    println(countDistinctWayToClimbStair(4))
-    println(countDistinctWayToClimbStair(6))
+    println(countWays(4))
+    println(countWays(6))
 }
 
-private fun countDistinctWayToClimbStair(nStairs: Long): Int {
-    return countWays(nStairs)
-}
-
-private fun countWays(position: Int, nStairs: Long): Int {
+private fun countWays(position: Int, nStairs: Int): Int {
     if (position > nStairs) {
         return 0
     }
 
-    if (position.toLong() == nStairs) {
+    if (position == nStairs) {
         return 1
     }
 
@@ -24,12 +20,12 @@ private fun countWays(position: Int, nStairs: Long): Int {
     return count1Stair + count2Stair
 }
 
-private fun countWays(nStairs: Long): Int {
+private fun countWays(nStairs: Int): Int {
     if (nStairs < 0) {
         return 0
     }
 
-    if (nStairs == 0L) {
+    if (nStairs == 0) {
         return 1
     }
 
