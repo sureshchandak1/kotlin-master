@@ -42,7 +42,7 @@ private fun robMoneyRec(nums: IntArray, n: Int): Int {
     return Math.max(include, exclude)
 }
 
-// Recursion + Memoisation
+// Recursion + Memoization
 // T.C = O(n), S.C = O(n) + O(n)
 private fun robMoneyMem(nums: IntArray, n: Int, dp: IntArray): Int {
 
