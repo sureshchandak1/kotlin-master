@@ -12,8 +12,8 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/geeksforgeeks" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/leetcode" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/codingninjas" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/dsa" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/dsa_450" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/dsa_love_babbar" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/dsa_450_love_babbar" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/design/patterns" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/kotlin" isTestSource="true" />
