@@ -38,7 +38,7 @@ private fun solve(n: Int): Int {
     return ans
 }
 
-// Memoization
+// Memorization
 // T.C = O(n), S.C = O(n) + O(n)
 private fun solveMem(n: Int, dp: IntArray): Int {
 
