@@ -1,4 +1,4 @@
-package lecture_118_Reducing_Dishes
+package lecture118_Reducing_Dishes
 
 /**
  *    https://leetcode.com/problems/reducing-dishes/description/
