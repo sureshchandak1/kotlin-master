@@ -11,6 +11,8 @@ fun main() {
     println(noOfWays(30, 30, 500))
 }
 
+private const val modulo  = 1000000007
+
 /**
  *   @param m = Faces
  *   @param n = Dice
@@ -113,7 +115,7 @@ private fun solveSC(d: Int, f: Int, t: Int): Long {
             var ans: Long = 0
             for (i in 1..f) {
                 if (target - i >= 0) {
-                    ans += prev[target - i]
+                    ans = ((ans % modulo) + (prev[target - i] % modulo)) % modulo
                 }
             }
 
@@ -126,7 +128,11 @@ private fun solveSC(d: Int, f: Int, t: Int): Long {
     return prev[t]
 }
 
-
+/**
+ *    ( a + b) % c = ( ( a % c ) + ( b % c ) ) % c
+ *    ( a * b) % c = ( ( a % c ) * ( b % c ) ) % c
+ *    ( a – b) % c = ( ( a % c ) – ( b % c ) ) % c
+ */
 
 
 
