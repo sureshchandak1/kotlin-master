@@ -34,7 +34,7 @@ private fun maxMeetings(n: Int, start: IntArray, end: IntArray): Int {
     return count
 }
 
-private class MyComparator : Comparator<Pair> {
+internal class MyComparator : Comparator<Pair> {
     override fun compare(p1: Pair, p2: Pair): Int {
         return p1.end.compareTo(p2.end)
     }
