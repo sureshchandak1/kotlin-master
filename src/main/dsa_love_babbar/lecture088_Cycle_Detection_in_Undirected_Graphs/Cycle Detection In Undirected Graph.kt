@@ -60,6 +60,7 @@ private fun cycleDetection(edges: Array<IntArray>, n: Int, m: Int): String {
     for (i in 0..< n) {
         if (!visited.containsKey(i) || !visited[i]!!) {
             val ans = isCyclicDFS(i, -1, visited, adj)
+            //val ans = isCyclicBFS(i, visited, adj)
             if (ans) {
                 return "Yes"
             }
