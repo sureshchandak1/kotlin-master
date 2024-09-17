@@ -33,6 +33,8 @@ fun main() {
     printArray(topologicalSort(edges, v, e))
 }
 
+// Directed Acyclic Graph (DAG), Acyclic = no cycle
+// Linear ordering of vertices such that for every edge u -> v, u always appears before v in that ordering
 private fun topologicalSort(edges: ArrayList<ArrayList<Int>>, v: Int, e: Int): ArrayList<Int> {
 
     // create adjacency list
