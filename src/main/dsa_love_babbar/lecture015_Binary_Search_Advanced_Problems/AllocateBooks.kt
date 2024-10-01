@@ -23,9 +23,9 @@ private fun allocateBooksMaxDays(n: Int, m: Int, time: IntArray): Long {
     while (start <= end) {
         if (isProceed(days, time, mid)) {
             ans = mid
-            start = mid + 1
-        } else {
             end = mid - 1
+        } else {
+            start = mid + 1
         }
 
         mid = start + (end - start) / 2
@@ -49,10 +49,6 @@ private fun isProceed(days: Int, time: IntArray, mid: Int): Boolean {
 
             studyCount = time[i]
         }
-    }
-
-    if (dayCount != days) {
-        return false
     }
 
     return true
