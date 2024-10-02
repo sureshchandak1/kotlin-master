@@ -3,9 +3,9 @@ package lecture034_Recursion_Day4
 import printArray
 
 fun main() {
-    val arr1 = intArrayOf(2, 5, 1, 6, 9)
+    val arr1 = intArrayOf(2, 5, 1, 9, 6)
     printArray(arr1)
-    sortArray(arr1, arr1.size - 1)
+    sortArray(arr1, arr1.size)
     printArray(arr1)
 }
 

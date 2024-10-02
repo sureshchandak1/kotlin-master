@@ -14,7 +14,7 @@ private fun isSorted(arr: IntArray, size: Int, index: Int): Boolean {
     if (arr[index] > arr[index + 1]) {
         return false
     } else {
-        val ans = isSorted(arr + 1, size - 1, index + 1)
+        val ans = isSorted(arr, size - 1, index + 1)
         return ans
     }
 
