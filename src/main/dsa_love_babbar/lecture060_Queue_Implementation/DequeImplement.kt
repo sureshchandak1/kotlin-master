@@ -139,21 +139,12 @@ private class Deque(n: Int) {
     }
 
     fun isEmpty(): Boolean {
-        if (front == -1) {
-            return true
-        } else {
-            return false
-        }
+        return front == -1
     }
 
     fun isFull(): Boolean {
-        if ((front == 0 && rear == size - 1) ||
-            (front != 0 && rear == (front - 1) % (size - 1))
-        ) {
-            // Queue is full
-            return true
-        } else {
-            return false
-        }
+        // Queue is full
+        return (front == 0 && rear == size - 1) ||
+                (front != 0 && rear == (front - 1) % (size - 1))
     }
 }
